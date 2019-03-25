@@ -10,8 +10,9 @@ module Mutations
     def resolve(url: nil, description: nil)
       Link.create!(
         url: url,
-        description: description
-      )
+        description: description,
+        user: context[:current_user]
+     )
     end
   end
 end
